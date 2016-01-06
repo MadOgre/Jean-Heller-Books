@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Jean Heller Books</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/app.js"></script>
+	<!-- Custom local CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="120" data-ng-app="JeanHellerBooks" ng-cloak data-ng-controller="bookDescriptionCtrl">
+
+
+
+    <nav id="navbar" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="images/JHB-logo2.png"></a>
+                </div> <!--/.navbar-header -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class=""><a  class="" href="#books-header">The Books</a></li>
+                        <li><a class="" href="#about-header">About Jean</a></li>
+                        <li class="follow-li"><a class="follow-button" href="#follow-header">Follow Us</a></li>
+                        <li><a class="contact-button" href="" data-toggle="modal" data-target="#contactModal">Contact</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="first-div" class="col-md-12 alt-back">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <img class="img-responsive featured" ng-src="{{::books[stickyBook].thumbnailImage}}" alt="Jean Heller - {{::books[stickyBook].title}}">
+                        </div><!--/.col-sm-5 -->
+                        <div class="col-sm-7 featured-column">
+                            <h1 class="featured-header">{{::books[stickyBook].title}}</h1>
+                            <p class="featured-description" ng-repeat="paragraph in books[stickyBook].description | limitTo: books[stickyBook].excerptParagraphs">{{paragraph}}</p>
+                            <div class="featured-buttons">
+                                <a href="http://jeanhellerbooks.indigo-grove.com/assets/wp-content/uploads/The-Someday-file-chapter11.pdf" target="_blank" class="btn btn-large btn-primary yellow-button"><span class="hidden-xs hidden-sm">read an </span>excerpt</a>
+                                <a href="" ng-href="{{books[stickyBook].amazonLink}}" target="_blank" class="btn btn-large btn-primary yellow-button">buy<span  class="hidden-xs hidden-sm"> the book</span></a>
+                            </div><!--/.featured-buttons -->
+                        </div><!--/.col-sm-7.featured-buttons -->
+                    </div><!--/.row -->
+                </div><!--/.container -->
+            </div><!--/#first-div -->
+        </div><!--/.row -->
+        <div class="row">
+            <div id="second-div" class="col-md-12 pri-back">
+                <div id="second-div-contents" class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="testimonials-header">PRAISE FOR JEAN HELLER</h1>
+                        </div><!--/.col-md-12 -->
+                        <div class="col-md-4"><p class="testimonial">“if Heller can keep the quality this high, mystery fans will have a lot to look forward to.”<span class="test-author"> - Kirkus Reviews</span></p></div><!--./col-md-4 -->
+                        <div class="col-md-4"><p class="testimonial">“I loved the twists and turns and the shocking ending.”<span class="test-author"> - Ann Livi Andrews, annliviandrews.com  and Goodreads</span></p></div><!--./col-md-4 -->
+                        <div class="col-md-4"><p class="testimonial">“The Someday File is a humdinger of a mystery, the first of a welcome new series.”<span class="test-author"> - Paul Levine,  author of Bum Rap</span></p></div><!--./col-md-4 -->
+                        <div class="clearfix"></div>
+                        <div class="col-md-4"><p class="testimonial">“Well-crafted and suspenseful...The story line is nicely twisty without stretching probability.”<span class="test-author"> <span class="test-author">- Publishers Weekly</span></span></p></div><!--./col-md-4 -->
+                        <div class="col-md-4"><p class="testimonial">“Well-plotted and tightly-written … The Someday File is a thrilling read.”<span class="test-author"> - Wendy Tyson,  International Thriller Writers, Big Thrill Newsletter</span></p></div><!--./col-md-4 -->
+                        <div class="col-md-4"><p class="testimonial">“The Someday File is a well-written mystery with a really well-thought out plot.”<span class="test-author"> - Book Loons</span></p></div><!--./col-md-4 -->
+                    </div><!--/.row -->
+                </div><!--/#second-div-contents.container -->
+            </div><!--/#second-div -->
+        </div><!--/.row -->
+        <div class="row">
+            <div id="third-div" class="col-md-12 alt-back books-div">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="testimonials-expander" class="down-arrow-circle"><div class="down-arrow">^</div><!--/.down-arrow --></div><!--/#testimonials-expander -->
+                        </div><!--/.col-md-12 -->
+                    </div><!--/.row -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 id="books-header" class="books-header">JEAN HELLER’S BOOKS</h1>
+                        </div><!--/.col-md-12 -->
+                        <!-- book descriptions -->
+                        <div ng-repeat="book in books" class="col-sm-4">
+                            <img ng-src="{{book.thumbnailImage}}" alt="Jean Heller - {{book.title}}" class="img-responsive">
+                            <div class="book-description">
+                                    <p ng-repeat="paragraph in book.description | limitTo: book.excerptParagraphs track by $index" ng-bind-html="paragraph | unsafe"></p>
+                                    <!-- Insert description here -->
+                                <p><a href="" ng-click="$parent.currentBook = $index" data-toggle="modal" data-target="#descriptionModal">Read More </a></p>
+                            </div><!--/.book-description -->
+
+                        </div><!-- description section for one book -->
+                    </div><!--/.row -->
+                </div><!--/.container -->
+            </div><!--/#third-div -->
+        </div><!--/.row -->
+        <div class="row">
+            <div id="fourth-div" class="col-md-12 pri-back gallery-div">
+                <div id="gallery-contents" class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h1 class="chicago-header">DEUCE MORA’S CHICAGO</h1>
+                        </div><!--.col-md-12 -->
+                        <div class="col-md-3">
+                            <img class="thb img-rounded img-responsive" src="images/Thumbnail-1.png" alt="Thumbnail 1">
+                        </div><!--.col-md-3 -->
+                        <div class="col-md-3">
+                            <img class="thb img-rounded img-responsive" src="images/Thumbnail-2.png" alt="Thumbnail 2">
+                        </div><!--.col-md-3 -->
+                        <div class="col-md-3">
+                            <img class="thb img-rounded img-responsive" src="images/Thumbnail-3.png" alt="Thumbnail 3">
+                        </div><!--.col-md-3 -->
+                        <div class="col-md-3">
+                            <img class="thb img-rounded img-responsive" src="images/Thumbnail-4.png" alt="Thumbnail 4">
+                        </div><!--.col-md-3 -->
+                    </div><!--/.row -->
+                </div><!--/.container -->
+            </div><!--/#fourth-div -->
+        </div><!--/.row -->
+        <div class="row">
+            <div id="fifth-div" class="col-md-12 alt-back">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <button id="show-more-pictures-button" class="btn btn-large btn-primary yellow-button">more pictures</button>
+                        </div><!--.col-md-12 -->
+                        <div class="col-md-12">
+                            <div id="gallery-expander" class="down-arrow-circle"><div class="down-arrow">^</div><!--/.down-arrow --></div><!--#gallery-expander -->
+                        </div><!--/.col-md-12 -->
+                    </div><!--/.row -->
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h1 id="about-header" class="about-header">ABOUT JEAN HELLER</h1>
+                        </div><!--/.col-md-12 -->
+                        <div class="col-md-12 text-center">
+                            <img class="portrait-image" src="images/Jean-Heller-Portrait.png" alt="Jean Heller portrait">
+                        </div><!--/.col-md-12 -->
+                        <div class="col-md-12">
+                            <p class="about-jean tagline">My mother once confronted my husband and me, put her hands on her hips, and asked, “Can’t one of you hold onto a job?”</p>
+                            <p class="about-jean">She was joking – sort of. Both of us were journalists, and we kept getting better jobs, which required moving. A lot. Moving frequently is, I have discovered, a good way to avoid having to clean out the closets, the garage, and the cabinets under the kitchen sink.</p>
+                            <p class="about-jean">Through it all, I have been one thing above all else, a writer.</p>
+                            <p class="about-jean">I started my first novel when I was in the third grade, the story of people living at the center of the earth. I liked the concept, but I really didn’t have a good plot point, and when I discovered what it’s really like at the center of the earth, the project sort of went up in flames, so to speak.</p>
+
+                            <p class="about-jean">My first complete novel, a thriller called “Maximum Impact,” was published by Forge, an imprint of St. Martin’s Press, in 1993. My second, “Handyman,” came two years later. Both received great reviews from critics, and both will be available in Kindle editions in early 2015.</p>
+
+                            <p class="about-jean">The new one, also a thriller, is called “The Someday File.” It is the first in what will be a series set in Chicago, a city I have loved since I was in college and which I have called home for years. I set it here because Chicago is such a great character in its own right. The stories I can build on these bones&mdash;quite literally in the case of “The Someday File”&mdash;have infinite possibilities.</p>
+
+                            <p class="about-jean tagline">Enjoy!</p>
+
+
+                            <hr>
+
+                            <p class="about-jean">Jean’s news career included serving as an investigative and projects reporter and editor for The Associated Press in New York City and Washington, D.C., The Cox Newspapers and New York Newsday in Washington, D.C. and the St. Petersburg Times in Washington, D.C. and Florida.</p>
+
+                            <p class="about-jean">Jean has won multiple awards, including the Worth Bingham Prize, the Polk Award, and is an eight-time Pulitzer Prize nominee.</p>
+                        </div><!--/.col-md-12 -->
+                    </div><!--/.row -->
+                </div><!--/.container -->
+            </div><!--#fifth.div -->
+        </div><!--/.row -->
+        <div class="row">
+            <div id="sixth-div" class="col-md-12 pri-back">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h1 id="follow-header" class="follow-header">FOLLOW US ON...</h1>
+                        </div><!--col-md-12 -->
+                        <div class="col-md-12 contact-icons text-center">
+                            <a href="#" data-toggle="modal" data-target="#contactModal"><img src="images/MailIcon.png" alt="E-mail Jean Heller"></a>
+                            <a href="https://www.facebook.com/JeanHellerBooks/" target="_blank"><img src="images/FacebookIcon.png" alt="Facebook link"></a>
+                            <a href="https://twitter.com/jeanhellerbooks/" target="_blank"><img src="images/TwitterIcon.png" alt="Twitter link"></a>
+                        </div><!--col-md-12 -->
+                    </div><!--/.row -->
+                </div><!--/.container -->
+            </div><!--/#sixth-div -->
+        </div><!--/.row -->
+    </div><!--/.container-fluid -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Contact Jean Heller</h4>
+                </div><!--/.modal-header -->
+                <div class="modal-body">
+                    <form>
+                        <input type="email" class="form-control" placeholder="Your e-mail address"><br>
+                        <textarea class="form-control" rows="12" placeholder="Your message"></textarea>
+                    </form>
+                </div><!--/.modal-body -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div><!--/.modal-footer -->
+            </div><!--/.modal-content -->
+        </div><!--/.modal-dialog -->
+    </div><!--/.modal -->
+
+    <div class="modal fade" id="descriptionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">About {{books[currentBook].title}}</h4>
+                </div>
+                <div class="modal-body">
+                    <p ng-repeat="paragraph in books[currentBook].description | filter: '!<!--more-->'">{{paragraph}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <a target= "_blank" href="" ng-href="{{books[currentBook].amazonLink}}" class="amazon-link btn" data-toggle="tooltip" data-placement="top" title="" ng-disabled="books[currentBook].amazonLink === ''" ><img src="images/Buy-Now-Kindle-0.png" height=34></a>
+                    <!--  -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+     <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- jQuery local fallback -->
+    <script>window.jQuery || document.write('<script src="js/jquery-2.1.4.min.js"><\/script>')</script>
+
+    <!-- Latest compiled and minified Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+      <!-- Bootstrap JS local fallback -->
+    <script>$.fn.modal || document.write('<script src="js/bootstrap.min.js"><\/script>')</script>
+      <!-- Bootstrap CSS local fallback -->
+    <script>
+        $(document).ready(function () {
+            var bodyColor = $('body').css('color');
+            if (bodyColor != 'rgb(51, 51, 51)') {
+                $("head").prepend('<link rel="stylesheet" href="css/bootstrap-theme.min.css">');
+                $("head").prepend('<link rel="stylesheet" href="css/bootstrap.min.css">');
+            }
+        });
+    </script>
+    <script src="js/custom.js"></script>
+</body>
+</html>
