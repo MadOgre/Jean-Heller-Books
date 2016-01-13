@@ -8,6 +8,14 @@
         return $sce.trustAsHtml;
     });
 
+
+    app.filter('testimonialFilter', function () {
+        return function (testimonialObject) {
+            return testimonialObject.body.replace('<p>', '<p class="testimonial">') + '<p class="test-author"> - ' + testimonialObject.author + '</p></p>';
+        };
+    });
+
+
     app.controller("bookDescriptionCtrl", ['$scope', '$http', function ($scope, $http) {
         function getDescription(bookObjectContent) {
             var match, innerMatch, i = 0, regExp, result = [[], 0];
@@ -40,6 +48,7 @@
             return match[3];
         }
         $scope.books = [];
+        $scope.testimonials = [];
         $http.get('http://jeanhellerbooks.indigo-grove.com/wp-json/wp/v2/posts/?filter[category_name]=books&filter[order]=DESC&filter[posts_per_page]=3')
             .success(function (data) {
                 //data = data.reverse();
@@ -57,6 +66,15 @@
                     if (bookObject.sticky === true) {
                         $scope.stickyBook = $scope.books.length - 1;
                     }
+                });
+            });
+        $http.get('http://jeanhellerbooks.indigo-grove.com/wp-json/wp/v2/posts/?filter[category_name]=testimonial&filter[order]=DESC')
+            .success(function (data) {
+                data.forEach(function (testimonialObject) {
+                    var temp = {};
+                    temp.body = testimonialObject.content.rendered;
+                    temp.author = testimonialObject.title.rendered;
+                    $scope.testimonials.push(temp);
                 });
             });
         $scope.currentBook = 0;

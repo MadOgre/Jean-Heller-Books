@@ -69,17 +69,11 @@
         <div class="row">
             <div id="second-div" class="col-md-12 pri-back">
                 <div id="second-div-contents" class="container">
-                    <div class="row">
+                    <div class="row" >
                         <div class="col-md-12">
                             <h1 class="testimonials-header">PRAISE FOR JEAN HELLER</h1>
                         </div><!--/.col-md-12 -->
-                        <div class="col-md-4"><p class="testimonial">“if Heller can keep the quality this high, mystery fans will have a lot to look forward to.”<span class="test-author"> - Kirkus Reviews</span></p></div><!--./col-md-4 -->
-                        <div class="col-md-4"><p class="testimonial">“I loved the twists and turns and the shocking ending.”<span class="test-author"> - Ann Livi Andrews, annliviandrews.com  and Goodreads</span></p></div><!--./col-md-4 -->
-                        <div class="col-md-4"><p class="testimonial">“The Someday File is a humdinger of a mystery, the first of a welcome new series.”<span class="test-author"> - Paul Levine,  author of Bum Rap</span></p></div><!--./col-md-4 -->
-                        <div class="clearfix"></div>
-                        <div class="col-md-4"><p class="testimonial">“Well-crafted and suspenseful...The story line is nicely twisty without stretching probability.”<span class="test-author"> <span class="test-author">- Publishers Weekly</span></span></p></div><!--./col-md-4 -->
-                        <div class="col-md-4"><p class="testimonial">“Well-plotted and tightly-written … The Someday File is a thrilling read.”<span class="test-author"> - Wendy Tyson,  International Thriller Writers, Big Thrill Newsletter</span></p></div><!--./col-md-4 -->
-                        <div class="col-md-4"><p class="testimonial">“The Someday File is a well-written mystery with a really well-thought out plot.”<span class="test-author"> - Book Loons</span></p></div><!--./col-md-4 -->
+                        <div class="col-md-6" ng-repeat="testimonial in testimonials" ng-bind-html="testimonial | testimonialFilter | unsafe"></div><!--./col-md-4 -->
                     </div><!--/.row -->
                 </div><!--/#second-div-contents.container -->
             </div><!--/#second-div -->

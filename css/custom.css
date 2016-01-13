@@ -239,7 +239,6 @@ img.featured {
 
 .testimonial {
     font: 700 18px / 25px Helvetica;
-    margin-bottom: 50px;
     color: #0b203d;
 }
 
@@ -248,6 +247,7 @@ img.featured {
     font-weight: normal;
     font-style: italic;
     color: #0b203d;
+    margin-bottom: 50px;
 }
 
 .testimonials-header {
