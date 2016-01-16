@@ -49,6 +49,7 @@
         }
         $scope.books = [];
         $scope.testimonials = [];
+        $scope.gallerypage = "";
         $http.get('http://jeanhellerbooks.indigo-grove.com/wp-json/wp/v2/posts/?filter[category_name]=books&filter[order]=DESC&filter[posts_per_page]=3')
             .success(function (data) {
                 //data = data.reverse();
@@ -67,6 +68,10 @@
                         $scope.stickyBook = $scope.books.length - 1;
                     }
                 });
+            });
+        $http.get('http://jeanhellerbooks.indigo-grove.com/wp-json/wp/v2/pages/54')
+            .success(function(data){
+                $scope.gallerypage = data.content.rendered;
             });
         $http.get('http://jeanhellerbooks.indigo-grove.com/wp-json/wp/v2/posts/?filter[category_name]=testimonial&filter[order]=DESC')
             .success(function (data) {

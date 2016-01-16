@@ -387,7 +387,7 @@ img.featured {
 }
 
 #fourth-div img {
-    width: 220px;
+    /* width: 220px; */
 }
 
 .padding-helper {
@@ -417,7 +417,7 @@ img.featured {
     margin-bottom: 34px;
 }
 
-.about-jean {
+.about-jean, body {
     font: 400 18px Helvetica;
     color: #0b203d;
 }
@@ -566,4 +566,40 @@ a:focus, img:focus {
 		left: 0;
 		right: 0;
   box-shadow: inset 3px 3px 10px 0px rgba(0,0,0,.35);
+}
+
+.gallery {
+    text-align: center;
+}
+
+.gallery:after {
+    content: "";
+    display: block;
+    clear: both;
+    position: relative;
+}
+
+.gallery-item {
+    width: 220px;
+/*    float: left;
+    height: 500px;*/
+    display: inline-block;
+    margin: 5px;
+    vertical-align: top;
+}
+
+.gallery-item img {
+    height: 220px;
+    width: 220px;
+    border-radius: 10px;
+}
+
+.gallery-item figcaption {
+    padding: 10px 5px;
+    text-align: left;
+}
+
+.gallerypage p {
+    font-weight: 700;
+    padding-top: 25px;
 }
