@@ -108,6 +108,7 @@ img.featured {
     /*min-height: 500px;*/
     max-height: 450px;
     padding-bottom: 50px;
+    overflow: hidden;
 }
 
 #fifth-div {
@@ -602,4 +603,10 @@ a:focus, img:focus {
 .gallerypage p {
     font-weight: 700;
     padding-top: 25px;
+}
+
+.aboutjeanpage img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 25px;
 }
